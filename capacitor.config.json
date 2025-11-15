@@ -1,0 +1,6 @@
+{
+  "appId": "com.congolibs.app",
+  "appName": "congolibs",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
