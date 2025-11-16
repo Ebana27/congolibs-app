@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CongoLibs - Bienvenue</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="/src/style.css">
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-black">
+  
+  <!-- Container principal -->
+  <div class="relative flex h-screen w-full flex-col overflow-hidden">
+    
+    <!-- Image de fond -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="/public/png1.png" 
+        alt="Student" 
+        class="h-full w-full object-cover object-center"
+        onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1080&h=1920&fit=crop'"
+      />
+      <!-- Gradient overlay -->
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/80"></div>
+    </div>
+    
+    <!-- Contenu -->
+    <div class="relative z-10 flex h-full flex-col">
+      
+      <!-- Top - Logo CongoLibs -->
+      <!-- <div class="p-6">
+        <div class="flex size-10 items-center justify-center rounded-full bg-white shadow-lg">
+          <span class="text-2xl font-bold text-[#26AD39]">C</span>
+        </div>
+      </div> -->
+      
+      <!-- Spacer pour pousser le contenu en bas -->
+      <div class="flex-1"></div>
+      
+      <!-- Bottom content -->
+      <div class="flex flex-col gap-6 px-6 pb-12">
+        
+        <!-- Texte principal -->
+        <div>
+          <h1 class="text-[48px] font-extrabold leading-[1.15] text-white" style="text-shadow: 0px 4px 27px rgba(7, 7, 7, 0.45);">
+            Le 21e siècle<br>c'est vous,<br>et c'est nous.
+          </h1>
+        </div>
+        
+        <!-- Bouton Commencer -->
+        <button 
+          onclick="window.location.href='/signup.html'"
+          class="flex h-16 w-full items-center justify-center rounded-xl bg-gradient-to-r from-[#1DDA59] to-[#57F52F] shadow-2xl active:scale-95 transition-transform"
+        >
+          <span class="text-2xl font-medium text-white">commencer</span>
+        </button>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecteur PDF - CongoLibs</title>
+  <link rel="stylesheet" href="/src/style.css">
+  <style>
+    #pdf-canvas {
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .pdf-controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      padding: 12px 20px;
+      border-radius: 50px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  
+  <!-- Header -->
+  <header class="sticky top-0 z-10 bg-white shadow-sm">
+    <div class="flex items-center justify-between px-4 py-3">
+      <button onclick="history.back()" class="text-2xl">←</button>
+      <h1 id="book-title" class="text-lg font-bold">Chargement...</h1>
+      <button onclick="toggleFullscreen()" class="text-2xl">⛶</button>
+    </div>
+  </header>
+  
+  <!-- Canvas PDF -->
+  <div id="pdf-container" class="flex flex-col items-center p-4 pb-32">
+    <canvas id="pdf-canvas"></canvas>
+  </div>
+  
+  <!-- Contrôles -->
+  <div class="pdf-controls">
+    <button onclick="previousPage()" class="px-3 py-1 text-xl">←</button>
+    <span id="page-info" class="text-sm font-semibold">1 / 1</span>
+    <button onclick="nextPage()" class="px-3 py-1 text-xl">→</button>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    const pdfjsLib = window['pdfjs-dist/build/pdf'];
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    
+    let pdfDoc = null;
+    let pageNum = 1;
+    let pageRendering = false;
+    let pageNumPending = null;
+    const scale = 1.5;
+    const canvas = document.getElementById('pdf-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Récupérer le nom du fichier depuis l'URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const pdfFile = urlParams.get('file') || 'sample.pdf';
+    
+    // Charger le PDF
+    pdfjsLib.getDocument(`/pdfs/${pdfFile}`).promise.then(pdf => {
+      pdfDoc = pdf;
+      document.getElementById('page-info').textContent = `1 / ${pdf.numPages}`;
+      renderPage(pageNum);
+    });
+    
+    function renderPage(num) {
+      pageRendering = true;
+      pdfDoc.getPage(num).then(page => {
+        const viewport = page.getViewport({ scale: scale });
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+        
+        const renderContext = {
+          canvasContext: ctx,
+          viewport: viewport
+        };
+        
+        const renderTask = page.render(renderContext);
+        renderTask.promise.then(() => {
+          pageRendering = false;
+          if (pageNumPending !== null) {
+            renderPage(pageNumPending);
+            pageNumPending = null;
+          }
+        });
+      });
+      
+      document.getElementById('page-info').textContent = `${num} / ${pdfDoc.numPages}`;
+    }
+    
+    function queueRenderPage(num) {
+      if (pageRendering) {
+        pageNumPending = num;
+      } else {
+        renderPage(num);
+      }
+    }
+    
+    function previousPage() {
+      if (pageNum <= 1) return;
+      pageNum--;
+      queueRenderPage(pageNum);
+    }
+    
+    function nextPage() {
+      if (pageNum >= pdfDoc.numPages) return;
+      pageNum++;
+      queueRenderPage(pageNum);
+    }
+    
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    }
+    
+    // Navigation avec les touches du clavier
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') previousPage();
+      if (e.key === 'ArrowRight') nextPage();
+    });
+  </script>
+  
+</body>
+</html>

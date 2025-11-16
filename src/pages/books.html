@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>CongoLibs - Livres numériques</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#006400",
+            "background-light": "#F9F9F9",
+            "background-dark": "#101622",
+            "text-main": "#333333",
+            "text-secondary": "#888888",
+          },
+          fontFamily: {
+            "display": ["Poppins", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+  <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+    <!-- Top App Bar -->
+    <header
+      class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+      <div class="text-text-main dark:text-gray-200 flex size-10 shrink-0 items-center justify-center">
+        <span class="material-symbols-outlined text-3xl">arrow_back</span>
+      </div>
+      <h1 class="text-text-main dark:text-white text-xl font-bold leading-tight flex-1 text-center">Livres numériques
+      </h1>
+      <div class="flex size-10 shrink-0 items-center"></div> <!-- Spacer -->
+    </header>
+    <!-- Search Bar -->
+    <div class="px-4 py-3">
+      <label class="flex flex-col min-w-40 h-12 w-full">
+        <div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-white dark:bg-gray-800 shadow-sm">
+          <div class="text-text-secondary dark:text-gray-400 flex items-center justify-center pl-4">
+            <span class="material-symbols-outlined">search</span>
+          </div>
+          <input
+            class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-main dark:text-gray-200 focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-text-secondary dark:placeholder:text-gray-500 pl-2 text-base font-normal leading-normal"
+            placeholder="Rechercher un livre..." value="" />
+        </div>
+      </label>
+    </div>
+    <!-- Filter Chips -->
+    <div class="flex gap-3 px-4 pb-3 overflow-x-auto">
+      <button
+        class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary pl-5 pr-5 text-white shadow-md">
+        <p class="text-sm font-medium leading-normal">Tous</p>
+      </button>
+      <button
+        class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 pl-5 pr-5 text-text-main dark:text-gray-200 shadow-sm">
+        <p class="text-sm font-medium leading-normal">Maths</p>
+      </button>
+      <button
+        class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 pl-5 pr-5 text-text-main dark:text-gray-200 shadow-sm">
+        <p class="text-sm font-medium leading-normal">Histoire</p>
+      </button>
+      <button
+        class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 pl-5 pr-5 text-text-main dark:text-gray-200 shadow-sm">
+        <p class="text-sm font-medium leading-normal">Sciences</p>
+      </button>
+      <button
+        class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 pl-5 pr-5 text-text-main dark:text-gray-200 shadow-sm">
+        <p class="text-sm font-medium leading-normal">Littérature</p>
+      </button>
+    </div>
+    <main>
+      <!-- Section: Ajoutés récemment -->
+      <section>
+        <h2 class="text-text-main dark:text-white text-lg font-bold leading-tight tracking-tight px-4 pb-3 pt-5">Ajoutés
+          récemment</h2>
+        <div class="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-4 p-4">
+          <!-- Book Card 1 -->
+          <div class="flex flex-col gap-2">
+            <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg shadow-md"
+              data-alt="Cover of the book Analyse Mathématique"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDP52wpkGWaF4r4MBhxTumWDmC5EXeGRlVP_OcGOfa3akrEdS1syGtalOJuZb07nIbk6Sen_RJv3XMd9LV7C4ivI1zwjWftaS6pTu0GY-4O9H-RxFxdUpB1DIgag23V5Yra1fCIPSx1zg6GkVD-jRqjY9KCGTl1Wi0RI43ZulRgrngGr3wi_2_WGLxNqkgdWRmExKMolTGFDg6UrMjsnufVzHnEsuWLi0xsRFyJz6mlJfrEsG9Hjd0lboOBxQZRDrEoEsAOqqxkdNc");'>
+            </div>
+            <div class="flex flex-col">
+              <h3 class="text-text-main dark:text-gray-200 text-base font-semibold leading-tight truncate">Analyse
+                Mathématique</h3>
+              <p class="text-text-secondary dark:text-gray-400 text-sm font-normal leading-normal">Jean Dupont</p>
+              <div class="flex items-center justify-between mt-2">
+                <button class="text-primary text-sm font-semibold">Lire</button>
+                <button class="text-text-secondary dark:text-gray-400">
+                  <span class="material-symbols-outlined text-2xl">download</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Book Card 2 -->
+          <div class="flex flex-col gap-2">
+            <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg shadow-md"
+              data-alt="Cover of the book Physique Quantique"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDlKDXOZwNKnYMBkZwnnoOQTEJyUSS7DUjAUDIv_hQAaFrZ4lG0ls6Vijm5SphuZCgRtGF33In-_pG1iY_nQ8GyZ4Yktdd6j8oW5oZhWl-1maiD0MwxU6bQNJ5sbgpYv2qs5L9QjxYWfKnlPQ_qP9bGmFhyvtr5pN1L7pnn7Plc4XBA7DT8hELWTS0sbpVzMwiZtF34Fc6s4zkAP7pJimpf0ygW_vPviyBn3f5kzYSYIn4vG3ITWQW_39gEAx2Wr0jVz6KoqSouM_I");'>
+            </div>
+            <div class="flex flex-col">
+              <h3 class="text-text-main dark:text-gray-200 text-base font-semibold leading-tight truncate">Physique
+                Quantique</h3>
+              <p class="text-text-secondary dark:text-gray-400 text-sm font-normal leading-normal">Marie Curie</p>
+              <div class="flex items-center justify-between mt-2">
+                <button class="text-primary text-sm font-semibold">Lire</button>
+                <button class="text-primary"> <!-- Downloaded State Example -->
+                  <span class="material-symbols-outlined text-2xl">check_circle</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Section: Populaires -->
+      <section>
+        <h2 class="text-text-main dark:text-white text-lg font-bold leading-tight tracking-tight px-4 pb-3 pt-5">
+          Populaires</h2>
+        <div class="grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-4 p-4">
+          <!-- Book Card 3 -->
+          <div class="flex flex-col gap-2">
+            <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg shadow-md"
+              data-alt="Cover of the book Histoire du Congo"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAie0krBQFddT4NejpS03jY5YycU46x7_PFeRHNbThDz_f_w-5dcr2MlJTjaTiZlUIrnVzqJFxIdlD0HDcdNonXm1XTD60CrcdyRUlRA98nI9KdWWxktTNR7RGMkYr5zpxkkIYdQtP5hU1vO13cjAWw-1In8Q6tenX0nPmLk12XhXvGsTu8stDvw4H1REG5hu7f9do7PSUZ_HJshoC3dcdx3YW5-H36fRB0_ffH0gCHSs26c5rhDpouxQwfTkqvPFkSxWWJjUrdan4");'>
+            </div>
+            <div class="flex flex-col">
+              <h3 class="text-text-main dark:text-gray-200 text-base font-semibold leading-tight truncate">Histoire du
+                Congo</h3>
+              <p class="text-text-secondary dark:text-gray-400 text-sm font-normal leading-normal">A. K. N'Dua</p>
+              <div class="flex items-center justify-between mt-2">
+                <button class="text-primary text-sm font-semibold">Lire</button>
+                <button class="text-text-secondary dark:text-gray-400">
+                  <span class="material-symbols-outlined text-2xl">download</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Book Card 4 -->
+          <div class="flex flex-col gap-2">
+            <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-lg shadow-md"
+              data-alt="Cover of the book Le Cid"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD9A9SOlFmzcGPj4IUTY3izUPxM-DBPbF5qYk4BrC0K1O-JShenkM6odMVQQKHB_BzQnCyn-RhfGcrxzdY-rJnkmbBdcuV51MTTbMjw_0dvagfyECNPSS1rs-wVOQLjIyfO7W7QSFuANHwaGwcuvhMojfTSDO7HFc-n8b0eiriEnHs7VtDWsJrqASi902UtdXpZzwtzfghA9B3frAJf9ACqS3mcJoidFDsBtHGsZ6oIYD95wLN2oZvaT7ULF-kXCWUY3F0t7xBd4pc");'>
+            </div>
+            <div class="flex flex-col">
+              <h3 class="text-text-main dark:text-gray-200 text-base font-semibold leading-tight truncate">Le Cid</h3>
+              <p class="text-text-secondary dark:text-gray-400 text-sm font-normal leading-normal">Pierre Corneille</p>
+              <div class="flex items-center justify-between mt-2">
+                <button class="text-primary text-sm font-semibold">Lire</button>
+                <button class="text-text-secondary dark:text-gray-400">
+                  <span class="material-symbols-outlined text-2xl">download</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>

@@ -1,13 +1,169 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>congolibs</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CongoLibs - Accueil</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="/src/style.css">
+  
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 font-[Poppins] pb-24">
+  
+  <div class="relative flex min-h-screen w-full flex-col">
+    
+    <!-- Header -->
+    <header class="flex items-center justify-between bg-white dark:bg-gray-800 px-4 py-4">
+      <div class="flex size-12 shrink-0 items-center">
+        <div 
+          class="aspect-square size-10 rounded-full bg-cover bg-center ring-2 ring-[#064025]"
+          style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDCnatBbKRSvY4nBTHjoIFGv5ivw4khAY3hcClX8dkuRk-MlyEG2m1k5kKJBbWOSCAZH1YFqSXcPpsdJDNQCYWD-O8DsUn_hX7i4bCKvhR1sscvaUDEZjE0hftqFGLyYXpdFAlYzGv9uaM1p_2aUaD2YCFuQK_1NcJRHzCm4a81WxgltZ8kpUKCn7uduKubDty0pFc_eHsTRlk-iNHkQqAfXNaPZYyNZJO2EHryLzD_1ElBnQisvf-7SK_3wBc6JX12FY_KUd0uI_E');">
+        </div>
+      </div>
+      <div class="flex w-12 items-center justify-end">
+        <button class="relative flex h-12 w-12 items-center justify-center text-gray-800 dark:text-gray-200">
+          <span class="material-symbols-outlined text-2xl">notifications</span>
+          <span class="absolute right-2 top-2 h-2 w-2 rounded-full bg-[#FF6B6B]"></span>
+        </button>
+      </div>
+    </header>
+    
+    <!-- Welcome Message -->
+    <div class="px-4 pt-6 pb-4">
+      <h1 class="text-[36px] font-bold leading-[1.1] tracking-tight text-gray-900 dark:text-white">
+        Bonjour, <span class="text-[#26AD39]">Alex</span>!<span class="text-md"><br>Bienvenue<br>sur congolibs</span>
+      </h1>
+    </div>
+    
+    <!-- Search Bar en haut -->
+    <div class="px-4 pb-6">
+      <div class="flex h-14 w-full items-center rounded-full border-2 border-gray-200 bg-white px-5 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+        <span class="material-symbols-outlined text-gray-400 mr-3">search</span>
+        <input 
+          type="text"
+          class="h-full w-full flex-1 border-none bg-transparent text-base text-gray-900 placeholder-gray-400 outline-none dark:text-gray-200 dark:placeholder-gray-500"
+          placeholder="Rechercher un livre, un cours..."
+        />
+      </div>
+    </div>
+    
+    <!-- Quick Access Grid - Couleurs Congo pâles et harmonieuses -->
+    <div class="grid grid-cols-2 gap-4 px-4">
+      
+      <!-- Card 1: Livres numériques - Vert pâle -->
+      <a href="/src/pages/books.html" class="flex min-h-[180px] flex-col items-start justify-end rounded-[28px] bg-[#E8F5E9] dark:bg-[#1B5E20] p-5 shadow-md active:scale-[0.98] transition-transform border border-[#A5D6A7]">
+        <div class="mb-3">
+          <span class="material-symbols-outlined text-[48px] text-[#2E7D32]">auto_stories</span>
+        </div>
+        <h3 class="text-lg font-bold text-[#1B5E20] dark:text-white">Livres<br>numériques</h3>
+      </a>
+      
+      <!-- Card 2: Résultats - Blanc/Gris clair -->
+      <a href="/src/pages/results.html" class="flex min-h-[180px] flex-col items-start justify-end rounded-[28px] bg-white dark:bg-gray-800 p-5 shadow-md active:scale-[0.98] transition-transform border-2 border-gray-200 dark:border-gray-700">
+        <div class="mb-3">
+          <span class="material-symbols-outlined text-[48px] text-[#26AD39]">bar_chart_4_bars</span>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 dark:text-white">Résultats<br>d'examen</h3>
+      </a>
+      
+      <!-- Card 3: Calendrier - Vert lime pâle -->
+      <a href="/src/pages/calendar.html" class="flex min-h-[180px] flex-col items-start justify-end rounded-[28px] bg-[#F1F8E9] dark:bg-[#33691E] p-5 shadow-md active:scale-[0.98] transition-transform border border-[#C5E1A5]">
+        <div class="mb-3">
+          <span class="material-symbols-outlined text-[48px] text-[#558B2F]">calendar_month</span>
+        </div>
+        <h3 class="text-lg font-bold text-[#33691E] dark:text-white">Calendrier<br>des examens</h3>
+      </a>
+      
+      <!-- Card 4: Assistant IA - Jaune/Vert doux -->
+      <a href="/src/pages/ai.html" class="flex min-h-[180px] flex-col items-start justify-end rounded-[28px] bg-[#F9FBE7] dark:bg-[#827717] p-5 shadow-md active:scale-[0.98] transition-transform border border-[#DCE775]">
+        <div class="mb-3">
+          <span class="material-symbols-outlined text-[48px] text-[#9E9D24]">smart_toy</span>
+        </div>
+        <h3 class="text-lg font-bold text-[#827717] dark:text-white">Assistant<br>IA</h3>
+      </a>
+      
+    </div>
+    
+  </div>
+  
+  <!-- Bottom Navigation stylisée avec bouton + dans un cercle -->
+  <nav class="fixed bottom-0 left-0 right-0 z-50">
+<!-- Bottom Navigation Bar CongoLibs -->
+<div class="fixed z-50 w-full h-16 max-w-lg -translate-x-1/2 bg-white/95 dark:bg-gray-800/95 backdrop-blur-lg border-2 border-gray-200 dark:border-gray-700 rounded-full bottom-4 left-1/2 shadow-xl">
+    <div class="grid h-full max-w-lg grid-cols-5 mx-auto">
+        
+        <!-- Home -->
+        <a href="/index.html" class="inline-flex flex-col items-center justify-center px-5 rounded-s-full hover:bg-[#26AD39]/10 group transition-colors">
+            <svg class="w-6 h-6 mb-1 text-gray-500 group-hover:text-[#26AD39] dark:text-gray-400 dark:group-hover:text-[#26AD39]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z" clip-rule="evenodd"/>
+            </svg>
+            <span class="sr-only">Accueil</span>
+        </a>
+        
+        <!-- Bibliothèque (remplace Settings) -->
+        <a href="/src/pages/books.html" class="inline-flex flex-col items-center justify-center px-5 hover:bg-[#26AD39]/10 group transition-colors">
+            <svg class="w-6 h-6 mb-1 text-gray-500 group-hover:text-[#26AD39] dark:text-gray-400 dark:group-hover:text-[#26AD39]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.03v13m0-13c-2.819-.831-4.715-1.076-8.029-1.023A.99.99 0 0 0 3 6v11c0 .563.466 1.014 1.03 1.007 3.122-.043 5.018.212 7.97 1.023m0-13c2.819-.831 4.715-1.076 8.029-1.023A.99.99 0 0 1 21 6v11c0 .563-.466 1.014-1.03 1.007-3.122-.043-5.018.212-7.97 1.023"/>
+            </svg>
+            <span class="sr-only">Bibliothèque</span>
+        </a>
+        
+        <!-- Bouton Central + -->
+        <div class="flex items-center justify-center">
+            <button type="button" class="inline-flex items-center justify-center text-white bg-gradient-to-r from-[#1DDA59] to-[#26AD39] hover:from-[#26AD39] hover:to-[#1DDA59] focus:ring-4 focus:ring-[#26AD39]/20 shadow-lg rounded-full w-12 h-12 focus:outline-none transition-all active:scale-95">
+                <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/>
+                </svg>
+                <span class="sr-only">Ajouter</span>
+            </button>
+        </div>
+        
+        <!-- Téléchargements (remplace Profile) -->
+        <a href="/src/pages/gallery.html" class="inline-flex flex-col items-center justify-center px-5 hover:bg-[#26AD39]/10 group transition-colors">
+            <svg class="w-6 h-6 mb-1 text-gray-500 group-hover:text-[#26AD39] dark:text-gray-400 dark:group-hover:text-[#26AD39]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13V4M7 14H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2m-1-5-4 5-4-5m9 8h.01"/>
+            </svg>
+            <span class="sr-only">Téléchargements</span>
+        </a>
+        
+        <!-- Profil -->
+        <a href="/src/pages/profile.html" class="inline-flex flex-col items-center justify-center px-5 rounded-e-full hover:bg-[#26AD39]/10 group transition-colors">
+            <svg class="w-6 h-6 mb-1 text-gray-500 group-hover:text-[#26AD39] dark:text-gray-400 dark:group-hover:text-[#26AD39]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0a8.949 8.949 0 0 0 4.951-1.488A3.987 3.987 0 0 0 13 16h-2a3.987 3.987 0 0 0-3.951 3.512A8.948 8.948 0 0 0 12 21Zm3-11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+            </svg>
+            <span class="sr-only">Profil</span>
+        </a>
+        
+    </div>
+</div>
+  </nav>
+  
+  <script>
+    function initTheme() {
+      const isDark = localStorage.getItem('theme') === 'dark' || 
+                     (!localStorage.getItem('theme') && 
+                      window.matchMedia('(prefers-color-scheme: dark)').matches);
+      
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+    
+    document.addEventListener('DOMContentLoaded', initTheme);
+  </script>
+  
+</body>
 </html>

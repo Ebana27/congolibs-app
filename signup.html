@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CongoLibs - Inscription</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body class="bg-white font-[Poppins]">
+  
+  <div class="relative mx-auto flex min-h-screen max-w-md flex-col px-6 py-8">
+    
+    <!-- Logo illustration -->
+    <div class="flex justify-center -mt-8 mb-8">
+      <img 
+        src="https://cdni.iconscout.com/illustration/premium/thumb/student-reading-book-8043715-6430886.png" 
+        alt="Student illustration" 
+        class="h-64 w-64 object-contain"
+      />
+    </div>
+    
+    <!-- Progress bar -->
+    <div class="mb-8 flex gap-3">
+      <div id="progress-1" class="h-2 flex-1 rounded-full bg-[#26AD39] transition-all"></div>
+      <div id="progress-2" class="h-2 flex-1 rounded-full bg-gray-200 transition-all"></div>
+      <div id="progress-3" class="h-2 flex-1 rounded-full bg-gray-200 transition-all"></div>
+      <div id="progress-4" class="h-2 flex-1 rounded-full bg-gray-200 transition-all"></div>
+    </div>
+    
+    <!-- Étape 1 : Identité -->
+    <div id="step-1" class="step-content">
+      <div class="mb-6">
+        <label class="mb-2 block text-base font-semibold text-gray-900">Nom(s)</label>
+        <input 
+          id="nom"
+          type="text" 
+          placeholder="Ebana" 
+          class="h-12 w-full rounded-lg border border-gray-300 px-4 text-sm outline-none focus:border-[#26AD39] focus:ring-2 focus:ring-[#26AD39]/20"
+        />
+      </div>
+      
+      <div class="mb-6">
+        <label class="mb-2 block text-base font-semibold text-gray-900">Prénom(s)</label>
+        <input 
+          id="prenom"
+          type="text" 
+          placeholder="Plamedi" 
+          class="h-12 w-full rounded-lg border border-gray-300 px-4 text-sm outline-none focus:border-[#26AD39] focus:ring-2 focus:ring-[#26AD39]/20"
+        />
+      </div>
+      
+      <!-- Type d'utilisateur -->
+      <div class="mb-8">
+        <p class="mb-3 text-base font-semibold text-gray-900">Vous êtes :</p>
+        <div class="flex flex-wrap gap-3">
+          <label class="flex cursor-pointer items-center gap-2">
+            <input type="radio" name="userType" value="eleve" class="peer hidden" />
+            <div class="flex h-5 w-5 items-center justify-center rounded border-2 border-gray-300 peer-checked:border-[#26AD39] peer-checked:bg-[#26AD39]">
+              <div class="h-2 w-2 rounded-sm bg-white opacity-0 peer-checked:opacity-100"></div>
+            </div>
+            <span class="text-sm text-gray-700">Élève</span>
+          </label>
+          
+          <label class="flex cursor-pointer items-center gap-2">
+            <input type="radio" name="userType" value="etudiant" class="peer hidden" />
+            <div class="flex h-5 w-5 items-center justify-center rounded border-2 border-gray-300 peer-checked:border-[#26AD39] peer-checked:bg-[#26AD39]">
+              <div class="h-2 w-2 rounded-sm bg-white opacity-0 peer-checked:opacity-100"></div>
+            </div>
+            <span class="text-sm text-gray-700">Étudiant</span>
+          </label>
+          
+          <label class="flex cursor-pointer items-center gap-2">
+            <input type="radio" name="userType" value="professeur" class="peer hidden" />
+            <div class="flex h-5 w-5 items-center justify-center rounded border-2 border-gray-300 peer-checked:border-[#26AD39] peer-checked:bg-[#26AD39]">
+              <div class="h-2 w-2 rounded-sm bg-white opacity-0 peer-checked:opacity-100"></div>
+            </div>
+            <span class="text-sm text-gray-700">Professeur</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Étape 2 : Niveau scolaire (Élèves) -->
+    <div id="step-2-eleve" class="step-content hidden">
+      <div class="mb-6 grid grid-cols-2 gap-4">
+        <div>
+          <label class="mb-2 block text-base font-semibold text-gray-900">Niveau</label>
+          <select class="h-12 w-full rounded-lg border border-gray-300 px-4 text-sm outline-none focus:border-[#26AD39]">
+            <option>6e</option>
+            <option>5e</option>
+            <option>4e</option>
+            <option>3e</option>
+            <option>2nde</option>
+            <option>1ère</option>
+            <option>Tle</option>
+          </select>
+        </div>
+        
+        <div>
+          <label class="mb-2 block text-base font-semibold text-gray-900">Cycle</label>
+          <select class="h-12 w-full rounded-lg border border-gray-300 px-4 text-sm outline-none focus:border-[#26AD39]">
+            <option>Collège</option>
+            <option>Lycée</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="mb-6">
+        <label class="mb-2 block text-base font-semibold text-gray-900">École</label>
+        <div class="relative">
+          <input 
+            type="text" 
+            placeholder="Nom de votre école" 
+            class="h-12 w-full rounded-lg border border-gray-300 pl-12 pr-4 text-sm outline-none focus:border-[#26AD39]"
+          />
+          <span class="material-symbols-outlined absolute left-4 top-3 text-gray-400">school</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Étape 2 : Université (Étudiants) -->
+    <div id="step-2-etudiant" class="step-content hidden">
+      <div class="mb-6">
+        <label class="mb-2 block text-base font-semibold text-gray-900">Université</label>
+        <div class="relative">
+          <input 
+            type="text" 
+            placeholder="Nom de votre université" 
+            class="h-12 w-full rounded-lg border border-gray-300 pl-12 pr-4 text-sm outline-none focus:border-[#26AD39]"
+          />
+          <span class="material-symbols-outlined absolute left-4 top-3 text-gray-400">account_balance</span>
+        </div>
+      </div>
+      
+      <div class="mb-6">
+        <label class="mb-2 block text-base font-semibold text-gray-900">Filière</label>
+        <input 
+          type="text" 
+          placeholder="Ex: Informatique" 
+          class="h-12 w-full rounded-lg border border-gray-300 px-4 text-sm outline-none focus:border-[#26AD39]"
+        />
+      </div>
+      
+      <div class="mb-6">
+        <label class="mb-2 block text-base font-semibold text-gray-900">Niveau</label>
+        <select class="h-12 w-full rounded-lg border border-gray-300 px-4 text-sm outline-none focus:border-[#26AD39]">
+          <option>L1</option>
+          <option>L2</option>
+          <option>L3</option>
+          <option>M1</option>
+          <option>M2</option>
+        </select>
+      </div>
+    </div>
+    
+    <!-- Étape 2 : Matière (Professeurs) -->
+    <div id="step-2-professeur" class="step-content hidden">
+      <div class="mb-6">
+        <label class="mb-2 block text-base font-semibold text-gray-900">Matière enseignée</label>
+        <select class="h-12 w-full rounded-lg border border-gray-300 px-4 text-sm outline-none focus:border-[#26AD39]">
+          <option>Mathématiques</option>
+          <option>Physique</option>
+          <option>Chimie</option>
+          <option>SVT</option>
+          <option>Français</option>
+          <option>Histoire-Géo</option>
+          <option>Anglais</option>
+        </select>
+      </div>
+      
+      <div class="mb-6">
+        <label class="mb-2 block text-base font-semibold text-gray-900">Établissement</label>
+        <div class="relative">
+          <input 
+            type="text" 
+            placeholder="Nom de votre établissement" 
+            class="h-12 w-full rounded-lg border border-gray-300 pl-12 pr-4 text-sm outline-none focus:border-[#26AD39]"
+          />
+          <span class="material-symbols-outlined absolute left-4 top-3 text-gray-400">business</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Étape 3 : Coordonnées -->
+    <div id="step-3" class="step-content hidden">
+      <div class="mb-6">
+        <label class="mb-2 block text-base font-semibold text-gray-900">Email</label>
+        <input 
+          type="email" 
+          placeholder="votre@email.com" 
+          class="h-12 w-full rounded-lg border border-gray-300 px-4 text-sm outline-none focus:border-[#26AD39]"
+        />
+      </div>
+      
+      <div class="mb-6">
+        <label class="mb-2 block text-base font-semibold text-gray-900">Téléphone</label>
+        <input 
+          type="tel" 
+          placeholder="+242 06 000 00 00" 
+          class="h-12 w-full rounded-lg border border-gray-300 px-4 text-sm outline-none focus:border-[#26AD39]"
+        />
+      </div>
+    </div>
+    
+    <!-- Étape 4 : Mot de passe -->
+    <div id="step-4" class="step-content hidden">
+      <div class="mb-6">
+        <label class="mb-2 block text-base font-semibold text-gray-900">Mot de passe</label>
+        <input 
+          type="password" 
+          placeholder="••••••••" 
+          class="h-12 w-full rounded-lg border border-gray-300 px-4 text-sm outline-none focus:border-[#26AD39]"
+        />
+      </div>
+      
+      <div class="mb-6">
+        <label class="mb-2 block text-base font-semibold text-gray-900">Confirmer le mot de passe</label>
+        <input 
+          type="password" 
+          placeholder="••••••••" 
+          class="h-12 w-full rounded-lg border border-gray-300 px-4 text-sm outline-none focus:border-[#26AD39]"
+        />
+      </div>
+    </div>
+    
+    <!-- Spacer -->
+    <div class="flex-1"></div>
+    
+    <!-- Boutons navigation -->
+    <div class="mt-8 flex gap-3">
+      <button 
+        id="btn-back"
+        onclick="previousStep()"
+        class="hidden h-14 flex-1 items-center justify-center rounded-xl bg-gray-100 text-xl font-medium text-gray-700 active:scale-95 transition-transform"
+      >
+        Retour
+      </button>
+      
+      <button 
+        id="btn-next"
+        onclick="nextStep()"
+        class="h-14 flex-1 rounded-xl bg-gradient-to-r from-[#1DDA59] to-[#57F52F] text-xl font-medium text-white shadow-lg active:scale-95 transition-transform"
+      >
+        Suivant
+      </button>
+    </div>
+    
+  </div>
+  
+  <script>
+    let currentStep = 1;
+    let userType = 'eleve';
+    
+    // Écouter le changement de type d'utilisateur
+    document.querySelectorAll('input[name="userType"]').forEach(radio => {
+      radio.addEventListener('change', (e) => {
+        userType = e.target.value;
+      });
+    });
+    
+    function nextStep() {
+      if (currentStep === 1) {
+        // Valider nom et prénom
+        const nom = document.getElementById('nom').value;
+        const prenom = document.getElementById('prenom').value;
+        const selectedType = document.querySelector('input[name="userType"]:checked');
+        
+        if (!nom || !prenom || !selectedType) {
+          alert('Veuillez remplir tous les champs');
+          return;
+        }
+        
+        // Cacher step 1
+        document.getElementById('step-1').classList.add('hidden');
+        
+        // Afficher step 2 selon le type
+        if (userType === 'eleve') {
+          document.getElementById('step-2-eleve').classList.remove('hidden');
+        } else if (userType === 'etudiant') {
+          document.getElementById('step-2-etudiant').classList.remove('hidden');
+        } else {
+          document.getElementById('step-2-professeur').classList.remove('hidden');
+        }
+        
+        currentStep = 2;
+        updateProgress();
+        document.getElementById('btn-back').classList.remove('hidden');
+        
+      } else if (currentStep === 2) {
+        // Cacher tous les step 2
+        document.getElementById('step-2-eleve').classList.add('hidden');
+        document.getElementById('step-2-etudiant').classList.add('hidden');
+        document.getElementById('step-2-professeur').classList.add('hidden');
+        
+        // Afficher step 3
+        document.getElementById('step-3').classList.remove('hidden');
+        currentStep = 3;
+        updateProgress();
+        
+      } else if (currentStep === 3) {
+        document.getElementById('step-3').classList.add('hidden');
+        document.getElementById('step-4').classList.remove('hidden');
+        currentStep = 4;
+        updateProgress();
+        document.getElementById('btn-next').textContent = 'Terminer';
+        
+      } else if (currentStep === 4) {
+        // Inscription terminée
+        alert('Inscription réussie ! 🎉');
+        window.location.href = '/index.html';
+      }
+    }
+    
+    function previousStep() {
+      if (currentStep === 2) {
+        // Retour au step 1
+        document.getElementById('step-2-eleve').classList.add('hidden');
+        document.getElementById('step-2-etudiant').classList.add('hidden');
+        document.getElementById('step-2-professeur').classList.add('hidden');
+        document.getElementById('step-1').classList.remove('hidden');
+        currentStep = 1;
+        document.getElementById('btn-back').classList.add('hidden');
+        
+      } else if (currentStep === 3) {
+        document.getElementById('step-3').classList.add('hidden');
+        if (userType === 'eleve') {
+          document.getElementById('step-2-eleve').classList.remove('hidden');
+        } else if (userType === 'etudiant') {
+          document.getElementById('step-2-etudiant').classList.remove('hidden');
+        } else {
+          document.getElementById('step-2-professeur').classList.remove('hidden');
+        }
+        currentStep = 2;
+        
+      } else if (currentStep === 4) {
+        document.getElementById('step-4').classList.add('hidden');
+        document.getElementById('step-3').classList.remove('hidden');
+        currentStep = 3;
+        document.getElementById('btn-next').textContent = 'Suivant';
+      }
+      
+      updateProgress();
+    }
+    
+    function updateProgress() {
+      for (let i = 1; i <= 4; i++) {
+        const progressBar = document.getElementById(`progress-${i}`);
+        if (i <= currentStep) {
+          progressBar.classList.remove('bg-gray-200');
+          progressBar.classList.add('bg-[#26AD39]');
+        } else {
+          progressBar.classList.remove('bg-[#26AD39]');
+          progressBar.classList.add('bg-gray-200');
+        }
+      }
+    }
+  </script>
+  
+</body>
+</html>
