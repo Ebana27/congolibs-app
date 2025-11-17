@@ -5,8 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build": "vite build",
     "preview": "vite preview",
-    "cap:android": "npx cap add android && npx cap copy android && npx cap open android"},
+
+    "cap:add": "npx cap add android",
+    "cap:sync": "npx cap sync android",
+    "cap:open": "npx cap open android"
+  },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.17",
     "autoprefixer": "^10.4.22",
