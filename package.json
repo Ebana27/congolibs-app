@@ -5,9 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npx tailwindcss -i ./src/style.css -o ./src/output.css --minify",
     "preview": "vite preview",
-    "build:css": "npx tailwindcss -i ./src/style.css -o ./src/output.css --watch",
     "cap:android": "npx cap add android && npx cap copy android && npx cap open android"},
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.17",

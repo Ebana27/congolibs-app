@@ -1,40 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-    /* Définition des variables couleur, typographie */
   --color-congo-green: #57F52F;
   --color-congo-dark: #064025;
   --color-congo-medium: #1E8B31;
   --color-congo-bright: #26AD39;
   --color-congo-lime: #1DDA59;
-
-  --font-poppins: "Poppins", sans-serif;
-  --font-roboto: "Roboto", sans-serif;
-  
 }
 
-* {
-  /* Couleur de texte  */
-
-  box-sizing: border-box;
-}
-
-/* Styles personnalisés CongoLibs */
 body {
-  min-height: 100vh;
-  font-family: var(--font-poppins);
-}
-
-.glassmorphic {
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.dark .glassmorphic {
-  background-color: rgba(31, 41, 55, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -47,24 +24,5 @@ body {
 }
 
 .material-symbols-outlined {
-  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-}
-
-/* Neutraliser les styles Ionic */
-ion-content {
-  --background: transparent;
-  --padding-start: 0;
-  --padding-end: 0;
-  --padding-top: 0;
-  --padding-bottom: 0;
-}
-
-ion-header {
-  --background: transparent;
-  box-shadow: none;
-}
-
-ion-toolbar {
-  --background: transparent;
-  --border-width: 0;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
