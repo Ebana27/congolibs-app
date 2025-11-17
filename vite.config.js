@@ -9,7 +9,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: './index.html',
-        onboarding: './onboarding.html'
+        // onboarding: './onboarding.html'
         // signup: './signup.html',
         // gallery: './gallery.html'
       }
