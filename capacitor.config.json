@@ -1,21 +1,13 @@
 {
   "appId": "com.congolibs.app",
-  "appName": "congolibs",
+  "appName": "CongoLibs",
   "webDir": "dist",
-  "bundledWebRuntime": false,
   "server": {
     "androidScheme": "https",
-    "allowNavigation": [
-      "*"
-    ]
+    "hostname": "congolibs.app"
   },
-  "plugins": {
-    "SplashScreen": {
-      "launchShowDuration": 3000
-    }
-  },
-  "icon": {
-    "foreground": "/favicon.png", 
-    "backgroundColor": "#ffffff" 
+  "android": {
+    "allowMixedContent": true,
+    "captureInput": true
   }
 }

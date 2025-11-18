@@ -26,3 +26,106 @@ body {
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
+
+/* Minimalist green branding (applied globally) */
+:root {
+  --brand: var(--color-congo-medium);
+  --brand-bright: var(--color-congo-bright);
+  --brand-lime: var(--color-congo-lime);
+  --brand-dark: var(--color-congo-dark);
+  --surface: #ffffff;
+  --muted: #6b7280;
+}
+
+html, body {
+  background: linear-gradient(180deg, #fbfffb 0%, #f3fff4 100%);
+  color: var(--brand-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Page container */
+.app-center {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header / Topbar */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  background: transparent;
+  border-bottom: 1px solid rgba(6,64,37,0.04);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 8px 24px rgba(6,64,37,0.04);
+  border: 1px solid rgba(6,64,37,0.03);
+}
+
+/* Primary brand button */
+.btn-primary, button[type="submit"], .brand-btn {
+  background: linear-gradient(90deg, var(--brand-lime), var(--brand-bright));
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(37,157,63,0.12);
+  cursor: pointer;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(6,64,37,0.08);
+  color: var(--brand-dark);
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+/* Inputs */
+input, select, textarea {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(6,64,37,0.06);
+  background: white;
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  box-shadow: 0 6px 18px rgba(37,157,63,0.08);
+  border-color: var(--brand-bright);
+}
+
+/* Small helpers */
+.muted { color: var(--muted); }
+.brand-badge { background: var(--brand-lime); color: white; padding: 4px 8px; border-radius: 999px; font-weight:600; }
+.rounded-lg { border-radius: 12px; }
+
+/* Footer nav / fixed bottom bar tweaks */
+.bottom-nav { background: rgba(255,255,255,0.9); backdrop-filter: blur(6px); border-radius: 999px; box-shadow: 0 10px 30px rgba(6,64,37,0.06); }
+
+@media (prefers-color-scheme: dark) {
+  html, body { background: linear-gradient(180deg, #05120a 0%, #08160b 100%); color: #e6ffee; }
+  .card { background: #07140b; border-color: rgba(37,157,63,0.06); box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+  input, select, textarea { background: #0b1a11; border-color: rgba(37,157,63,0.06); color: #e6ffee; }
+  .topbar { border-bottom-color: rgba(37,157,63,0.06); }
+}
+
+/* Small utility to center main CTA area */
+.hero { display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px; padding:32px 0; }
+
+/* keep existing small helpers */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
