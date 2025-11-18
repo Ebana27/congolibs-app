@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "generate-icons": "node scripts/generate-icons.js",
+    "generate-icons": "node scripts/generate-icons.cjs",
     "build": "vite build",
     "preview": "vite preview",
 

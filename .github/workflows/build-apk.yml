@@ -38,7 +38,7 @@ jobs:
     - name: Generate Android Icons
       run: |
         if [ -f "public/LogoDeCongolibsApk.png" ]; then
-          npm run generate-icons || npx node scripts/generate-icons.js
+          npm run generate-icons || npx node scripts/generate-icons.cjs
         else
           echo "Source icon not found; skipping icon generation"
         fi
