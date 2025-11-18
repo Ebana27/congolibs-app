@@ -15,7 +15,16 @@
 
   <!-- Tailwind CSS -->
   <link rel="stylesheet" href="/src/style.css">
-
+  <script>
+    // Register service worker (if not already registered)
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistration().then(reg => {
+        if (!reg) {
+          navigator.serviceWorker.register('/service-worker.js').then(r => console.log('SW registered')).catch(e => console.warn(e));
+        }
+      });
+    }
+  </script>
   <style>
     .material-symbols-outlined {
       font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;

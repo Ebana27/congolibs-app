@@ -2,10 +2,6 @@
   "appId": "com.congolibs.app",
   "appName": "CongoLibs",
   "webDir": "dist",
-  "server": {
-    "androidScheme": "https",
-    "hostname": "congolibs.app"
-  },
   "android": {
     "allowMixedContent": true,
     "captureInput": true

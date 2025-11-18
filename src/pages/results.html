@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Résultats d'examen - CongoLibs</title>
     <link rel="icon" href="/favicon.png">
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="/src/style.css">
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
@@ -20,6 +20,14 @@
             min-height: max(884px, 100dvh);
         }
     </style>
+        <script>
+            // Register service worker for offline
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js').then(reg => console.log('SW registered')).catch(err => console.warn('SW failed', err));
+                });
+            }
+        </script>
     <style>
         body {
             min-height: max(884px, 100dvh);
