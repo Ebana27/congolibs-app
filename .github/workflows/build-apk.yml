@@ -30,6 +30,14 @@ jobs:
     - name: Install Dependencies
       run: npm ci
     
+    - name: Generate Android Icons
+      run: |
+        if [ -f "public/LogoDeCongolibsApk.png" ]; then
+          npm run generate-icons || npx node scripts/generate-icons.js
+        else
+          echo "Source icon not found; skipping icon generation"
+        fi
+    
     - name: Build Web Assets
       run: npm run build
     
