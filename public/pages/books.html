@@ -1,4 +1,106 @@
-<div class="p-4">
-  <h2 class="text-lg font-bold mb-3">Livres numériques</h2>
-  <p class="text-sm text-gray-500">Liste des livres disponibles.</p>
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+  <!-- Top App Bar -->
+  <header
+    class="flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 pb-2 justify-between sticky top-0 z-10 border-b border-gray-100 dark:border-gray-800">
+    <div
+      class="text-text-main dark:text-gray-200 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 smooth-transition">
+     <a href="#home"><span class="material-symbols-outlined text-2xl">arrow_back</span></a>
+    </div>
+    <h1 class="text-text-main dark:text-white text-lg font-medium leading-tight tracking-tight">Livres numériques</h1>
+    <div
+      class="flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 smooth-transition">
+      <span class="material-symbols-outlined text-2xl">filter_list</span>
+    </div>
+  </header>
+
+  <!-- Search Bar -->
+  <div class="px-4 py-4">
+    <label class="flex flex-col min-w-40 h-12 w-full">
+      <div
+        class="flex w-full flex-1 items-stretch rounded-xl h-full bg-gray-100 dark:bg-gray-800/50 smooth-transition focus-within:ring-2 focus-within:ring-primary/20">
+        <div class="text-text-secondary dark:text-gray-400 flex items-center justify-center pl-4">
+          <span class="material-symbols-outlined text-xl">search</span>
+        </div>
+        <input
+          class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-text-main dark:text-gray-200 focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-text-secondary dark:placeholder:text-gray-500 pl-2 text-base font-normal leading-normal"
+          placeholder="Rechercher un livre..." value="" />
+      </div>
+    </label>
+  </div>
+
+  <!-- Filter Chips -->
+  <div class="flex gap-2 px-4 pb-4 overflow-x-auto scrollbar-hide">
+    <button
+      class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/10 text-primary px-4 smooth-transition hover:bg-primary/20">
+      <p class="text-sm font-medium">Tous</p>
+    </button>
+    <button
+      class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-100 dark:bg-gray-800/50 text-text-main dark:text-gray-200 px-4 smooth-transition hover:bg-gray-200 dark:hover:bg-gray-700">
+      <p class="text-sm font-medium">Maths</p>
+    </button>
+    <button
+      class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-100 dark:bg-gray-800/50 text-text-main dark:text-gray-200 px-4 smooth-transition hover:bg-gray-200 dark:hover:bg-gray-700">
+      <p class="text-sm font-medium">Histoire</p>
+    </button>
+    <button
+      class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-100 dark:bg-gray-800/50 text-text-main dark:text-gray-200 px-4 smooth-transition hover:bg-gray-200 dark:hover:bg-gray-700">
+      <p class="text-sm font-medium">Sciences</p>
+    </button>
+    <button
+      class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-100 dark:bg-gray-800/50 text-text-main dark:text-gray-200 px-4 smooth-transition hover:bg-gray-200 dark:hover:bg-gray-700">
+      <p class="text-sm font-medium">Littérature</p>
+    </button>
+  </div>
+
+  <main class="pb-20">
+    <!-- Section: Ajoutés récemment -->
+    <section>
+      <div class="flex items-center justify-between px-4 pb-3 pt-2">
+        <h2 class="text-text-main dark:text-white text-base font-semibold leading-tight tracking-tight">Ajoutés
+          récemment</h2>
+        <button class="text-primary text-sm font-medium">Voir tout</button>
+      </div>
+      <div class="flex gap-3 px-4 overflow-x-auto scrollbar-hide pb-2">
+        <!-- Book Card 1 -->
+        <div class="flex flex-col min-w-[140px] max-w-[140px] smooth-transition hover:scale-[1.02]">
+          <div
+            class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl shadow-sm mb-3 smooth-transition hover:shadow-md"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDP52wpkGWaF4r4MBhxTumWDmC5EXeGRlVP_OcGOfa3akrEdS1syGtalOJuZb07nIbk6Sen_RJv3XMd9LV7C4ivI1zwjWftaS6pTu0GY-4O9H-RxFxdUpB1DIgag23V5Yra1fCIPSx1zg6GkVD-jRqjY9KCGTl1Wi0RI43ZulRgrngGr3wi_2_WGLxNqkgdWRmExKMolTGFDg6UrMjsnufVzHnEsuWLi0xsRFyJz6mlJfrEsG9Hjd0lboOBxQZRDrEoEsAOqqxkdNc");'>
+          </div>
+          <div class="flex flex-col">
+            <h3 class="text-text-main dark:text-gray-200 text-sm font-medium leading-tight truncate">Analyse
+              Mathématique</h3>
+            <p class="text-text-secondary dark:text-gray-400 text-xs font-normal leading-normal mt-1">Jean Dupont</p>
+            <div class="flex items-center justify-between mt-2">
+              <button class="text-primary text-xs font-medium">Lire</button>
+              <button class="text-text-secondary dark:text-gray-400">
+                <span class="material-symbols-outlined text-xl">download</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </div>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+<script>
+  function openBook(filename) {
+    window.location.hash = 'reader?file=' + encodeURIComponent(filename);
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    const bookCards = document.querySelectorAll('.group');
+    const el = document.getElementById('book-count');
+    if (el) el.textContent = bookCards.length;
+  });
+</script>

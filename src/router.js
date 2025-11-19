@@ -9,11 +9,19 @@ class Router {
   }
 
   async handleRoute() {
-    let path = window.location.hash.slice(1) || 'onboarding';
+    const raw = window.location.hash.slice(1) || 'onboarding';
+    const path = raw.split('?')[0];
     const route = this.routes[path] || this.routes['404'];
+
+    // Hide bottom nav on onboarding, show otherwise
+    try {
+      const nav = document.getElementById('bottom-nav');
+      if (nav) nav.style.display = (path === 'onboarding') ? 'none' : '';
+    } catch (e) {}
+
     await this.loadPage(route.template);
     this.updateActiveNav(path);
-    if (route.onEnter) route.onEnter();
+    if (route.onEnter) route.onEnter(raw);
     this.currentRoute = path;
   }
 
@@ -54,6 +62,8 @@ const routes = {
   'books': { template: 'pages/books.html' },
   'gallery': { template: 'pages/gallery.html' },
   'profile': { template: 'pages/profile.html' },
+  'reader': { template: 'pages/reader.html' },
+  'results': { template: 'pages/results.html' },
   '404': { template: 'pages/404.html' }
 };
 

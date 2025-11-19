@@ -1,0 +1,64 @@
+<!-- Results fragment (from src/pages/results.html body) -->
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+  <div class="flex items-center bg-transparent p-4 pb-2 justify-between sticky top-0 z-10">
+    <div class="flex size-12 shrink-0 items-center justify-start">
+      <button class="flex h-10 w-10 items-center justify-center rounded-full bg-surface-light dark:bg-surface-dark shadow-sm border border-border-light dark:border-border-dark">
+        <a href="#home"><span class="material-symbols-outlined">arrow_back</span></a>
+      </button>
+    </div>
+    <h2 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight text-center">Résultats d'examen</h2>
+    <div class="flex size-12 shrink-0"></div>
+  </div>
+  <main class="flex-grow p-4">
+    <div class="bg-surface-light dark:bg-surface-dark rounded-3xl p-6 flex flex-col gap-5 shadow-sm border border-border-light dark:border-border-dark">
+      <div class="text-center">
+        <h1 class="text-text-light dark:text-text-dark text-xl font-bold leading-tight">Consultez vos résultats</h1>
+        <p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal pt-1">Saisissez vos informations pour continuer.</p>
+      </div>
+      <div class="flex flex-col gap-4">
+        <label class="flex flex-col w-full">
+          <p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal pb-1.5 px-1">Nom complet</p>
+          <div class="relative flex w-full flex-1 items-center">
+            <span class="material-symbols-outlined text-xl absolute left-4 text-text-secondary-light dark:text-text-secondary-dark">person</span>
+            <input class="form-input bg-background-light dark:bg-background-dark w-full rounded-xl py-3 pl-12 pr-4 text-base font-normal leading-normal text-text-light dark:text-text-dark placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark focus:outline-none focus:ring-2 focus:ring-primary/50 border-border-light dark:border-border-dark" placeholder="Saisissez votre nom complet" type="text" value="" />
+          </div>
+        </label>
+        <label class="flex flex-col w-full">
+          <p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal pb-1.5 px-1">Numéro de matricule</p>
+          <div class="relative flex w-full flex-1 items-center">
+            <span class="material-symbols-outlined text-xl absolute left-4 text-text-secondary-light dark:text-text-secondary-dark">tag</span>
+            <input class="form-input bg-background-light dark:bg-background-dark w-full rounded-xl py-3 pl-12 pr-4 text-base font-normal leading-normal text-text-light dark:text-text-dark placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark focus:outline-none focus:ring-2 focus:ring-primary/50 border-border-light dark:border-border-dark" placeholder="Saisissez votre matricule" type="text" value="" />
+          </div>
+        </label>
+        <label class="flex flex-col w-full">
+          <p class="text-text-light dark:text-text-dark text-sm font-medium leading-normal pb-1.5 px-1">Session d'examen</p>
+          <div class="relative flex w-full flex-1 items-center">
+            <span class="material-symbols-outlined text-xl absolute left-4 text-text-secondary-light dark:text-text-secondary-dark">event</span>
+            <select class="form-select bg-background-light dark:bg-background-dark w-full appearance-none rounded-xl py-3 pl-12 pr-10 text-base font-normal leading-normal text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50 border-border-light dark:border-border-dark">
+              <option>Sélectionnez une session</option>
+              <option>Session Ordinaire 2024</option>
+              <option>Session de Rattrapage 2024</option>
+              <option>Session Spéciale 2023</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4 text-text-secondary-light dark:text-text-secondary-dark">
+              <span class="material-symbols-outlined">expand_more</span>
+            </div>
+          </div>
+        </label>
+      </div>
+      <div class="pt-2">
+        <button class="flex w-full items-center justify-center rounded-xl bg-primary px-6 py-3.5 text-base font-bold text-background-dark shadow-md hover:scale-[1.02] active:scale-[0.98]">Afficher mes résultats</button>
+      </div>
+    </div>
+    <div class="mt-8">
+      <h3 class="text-lg font-bold px-1">Vos Résultats</h3>
+      <div class="bg-surface-light dark:bg-surface-dark flex flex-col items-center justify-center rounded-3xl p-6 mt-3 min-h-[200px] shadow-sm border border-border-light dark:border-border-dark">
+        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+          <span class="material-symbols-outlined text-4xl text-primary">search</span>
+        </div>
+        <p class="mt-4 text-center font-medium text-text-secondary-light dark:text-text-secondary-dark">Vos résultats s'afficheront ici.</p>
+        <p class="text-sm text-center text-text-secondary-light/70 dark:text-text-secondary-dark/70">Veuillez remplir le formulaire ci-dessus.</p>
+      </div>
+    </div>
+  </main>
+</div>
