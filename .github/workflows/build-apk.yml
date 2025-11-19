@@ -78,13 +78,15 @@ jobs:
           echo "Found gradlew wrapper. Making executable and building via wrapper."
           chmod +x android/gradlew
           cd android
-          ./gradlew assembleDebug --no-daemon
+          # build the app module explicitly
+          ./gradlew :app:assembleDebug --no-daemon
         else
           echo "gradlew wrapper not found. Installing gradle and building with system gradle."
           sudo apt-get update
           sudo apt-get install -y gradle
           cd android
-          gradle assembleDebug --no-daemon
+          # run the assemble task explicitly on the app module
+          gradle :app:assembleDebug --no-daemon
         fi
     
     - name: Upload APK Artifact
