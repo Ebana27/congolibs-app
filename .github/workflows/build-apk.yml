@@ -45,6 +45,18 @@ jobs:
     
     - name: Build Web Assets
       run: npm run build
+
+    - name: Copy page fragments into dist
+      run: |
+        if [ -d "public/pages" ]; then
+          echo "Copying public/pages -> dist/pages"
+          rm -rf dist/pages || true
+          mkdir -p dist/pages
+          cp -R public/pages/* dist/pages/
+        else
+          echo "No public/pages folder to copy"
+        fi
+      shell: bash
     
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3

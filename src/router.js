@@ -48,13 +48,13 @@ class Router {
 }
 
 const routes = {
-  'home': { template: '/public/pages/home.html' },
-  'onboarding': { template: '/public/pages/onboarding.html' },
-  'signup': { template: '/public/pages/signup.html' },
-  'books': { template: '/public/pages/books.html' },
-  'gallery': { template: '/public/pages/gallery.html' },
-  'profile': { template: '/public/pages/profile.html' },
-  '404': { template: '/public/pages/404.html' }
+  'home': { template: 'pages/home.html' },
+  'onboarding': { template: 'pages/onboarding.html' },
+  'signup': { template: 'pages/signup.html' },
+  'books': { template: 'pages/books.html' },
+  'gallery': { template: 'pages/gallery.html' },
+  'profile': { template: 'pages/profile.html' },
+  '404': { template: 'pages/404.html' }
 };
 
 export const router = new Router(routes);
