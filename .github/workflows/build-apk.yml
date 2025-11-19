@@ -65,9 +65,25 @@ jobs:
         EOF
         fi
     
-    - name: Add Android Platform
-      run: npx cap add android || echo "Android platform already exists"
-    
+    - name: Ensure Android platform project
+      run: |
+        # If settings.gradle exists, assume project was added. If not, regenerate.
+        if [ -f "android/settings.gradle" ] || [ -f "android/settings.gradle.kts" ]; then
+          echo "Android project found. Verifying app module..."
+          if [ -d "android/app" ] && ( [ -f "android/app/build.gradle" ] || [ -f "android/app/build.gradle.kts" ] ); then
+            echo "app module present. Skipping add."
+          else
+            echo "app module missing or incomplete. Removing android/ and regenerating platform."
+            rm -rf android
+            npx cap add android
+          fi
+        else
+          echo "Android project missing. Generating platform."
+          rm -rf android
+          npx cap add android
+        fi
+      shell: bash
+
     - name: Sync Capacitor
       run: npx cap sync android
     
