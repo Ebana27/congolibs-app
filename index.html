@@ -25,35 +25,12 @@
     </div>
   </div>
 
-  <!-- Bottom Navigation (FIXE) -->
-  <nav id="bottom-nav" class="fixed z-50 w-full h-16 max-w-lg -translate-x-1/2 bg-white/95 dark:bg-gray-800/95 backdrop-blur-lg border-2 border-gray-200 dark:border-gray-700 rounded-full bottom-4 left-1/2 shadow-xl">
-    <div class="grid h-full max-w-lg grid-cols-5 mx-auto">
-      <a href="#home" data-nav-link="home" class="inline-flex flex-col items-center justify-center px-5 rounded-s-full hover:bg-[#26AD39]/10 group transition-colors">
-        <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-      </a>
-      <a href="#books" data-nav-link="books" class="inline-flex flex-col items-center justify-center px-5 hover:bg-[#26AD39]/10 group transition-colors text-gray-500">
-        <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.03v13m0-13c-2.819-.831-4.715-1.076-8.029-1.023A.99.99 0 0 0 3 6v11c0 .563.466 1.014 1.03 1.007 3.122-.043 5.018.212 7.97 1.023m0-13c2.819-.831 4.715-1.076 8.029-1.023A.99.99 0 0 1 21 6v11c0 .563-.466 1.014-1.03 1.007-3.122-.043-5.018.212-7.97 1.023"/></svg>
-      </a>
-      <div class="flex items-center justify-center">
-        <button onclick="alert('Action rapide')" class="inline-flex items-center justify-center text-white bg-gradient-to-r from-[#1DDA59] to-[#26AD39] rounded-full w-12 h-12 shadow-lg active:scale-95 transition-transform">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/></svg>
-        </button>
-      </div>
-      <a href="#gallery" data-nav-link="gallery" class="inline-flex flex-col items-center justify-center px-5 hover:bg-[#26AD39]/10 group transition-colors text-gray-500">
-        <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13V4M7 14H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2m-1-5-4 5-4-5m9 8h.01"/></svg>
-      </a>
-      <a href="#profile" data-nav-link="profile" class="inline-flex flex-col items-center justify-center px-5 rounded-e-full hover:bg-[#26AD39]/10 group transition-colors text-gray-500">
-        <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0a8.949 8.949 0 0 0 4.951-1.488A3.987 3.987 0 0 0 13 16h-2a3.987 3.987 0 0 0-3.951 3.512A8.948 8.948 0 0 0 12 21Zm3-11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
-      </a>
-    </div>
-    </div>
-  </nav>
-
   <!-- Service worker registration -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js').catch(()=>{});
+        navigator.serviceWorker.register('/service-worker.js').catch((error)=>{console.error("Error ", error);
+        });
       });
     }
   </script>

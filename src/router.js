@@ -9,7 +9,7 @@ class Router {
   }
 
   async handleRoute() {
-    const raw = window.location.hash.slice(1) || 'onboarding';
+    const raw = window.location.hash.slice(1) || 'home';
     const path = raw.split('?')[0];
     const route = this.routes[path] || this.routes['404'];
 

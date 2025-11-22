@@ -129,3 +129,8 @@ input:focus, select:focus, textarea:focus {
 /* keep existing small helpers */
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+
+/* p {
+  color: #236e1a;
+} */

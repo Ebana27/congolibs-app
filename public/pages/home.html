@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>CongoLibs - Accueil</title>
+    <!-- Header: two items left, profile right -->
+    <header class="flex items-center justify-between bg-transparent dark:bg-gray-800 px-4 py-4">
+      <!-- Left: two action icons -->
+      <div class="flex items-center gap-3">
+        <div class="flex w-12 items-center justify-center border border-transparent rounded-full bg-gray-100">
+          <button class="relative flex h-12 w-12 items-center justify-center text-gray-800 dark:text-gray-200" aria-label="Notifications">
+            <span class="material-symbols-outlined text-2xl">notifications</span>
+            <span class="absolute right-2 top-2 h-2 w-2 rounded-full bg-[#FF6B6B]"></span>
+          </button>
+        </div>
 
-  <link rel="icon" href="/favicon.png">
+        <div class="flex w-12 items-center justify-center border border-transparent rounded-full bg-gray-100">
+          <button class="relative flex h-12 w-12 items-center justify-center text-gray-800 dark:text-gray-200" aria-label="Aide">
+            <span class="material-symbols-outlined text-2xl">help</span>
+          </button>
+        </div>
+      </div>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-
-  <!-- Tailwind CSS -->
-  <link rel="stylesheet" href="/src/style.css">
-  <script>
-    // Register service worker (if not already registered)
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistration().then(reg => {
-        if (!reg) {
-          navigator.serviceWorker.register('/service-worker.js').then(r => console.log('SW registered')).catch(e => console.warn(e));
-        }
-      });
-    }
-  </script>
-  <style>
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    }
-
-    /* Ajout pour permettre le défilement */
+      <!-- Right: profile avatar -->
+      <div class="flex items-center">
+        <a href="#profile" class="flex items-center justify-center rounded-full bg-gray-100 w-12 h-12" aria-label="Profil">
+          <img src="/public/favicon.png" alt="Profil" class="h-9 w-9 rounded-full object-cover" />
+        </a>
+      </div>
+    </header>
     html,
     body {
       height: 100%;
@@ -46,24 +41,39 @@
 </head>
 
 <body class="bg-white dark:bg-gray-900 font-[Poppins]">
-
+  <div class="ml-2 mr-2"></div>
   <!-- Modification du conteneur principal -->
   <div class="relative flex flex-col min-h-screen pb-24">
 
     <!-- Header -->
     <header class="flex items-center justify-between bg-transparent dark:bg-gray-800 px-4 py-4">
-      <div class="flex w-12 items-center justify-end border border-transparent rounded-full bg-gray-100">
-        <button class="relative flex h-12 w-12 items-center justify-center text-gray-800 dark:text-gray-200">
-          <span class="material-symbols-outlined text-2xl">notifications</span>
-          <span class="absolute right-2 top-2 h-2 w-2 rounded-full bg-[#FF6B6B]"></span>
-        </button>
+      <!-- Left: placeholder for potential logo / back button -->
+      <div class="flex items-center">
+        <!-- Optionally add a small logo here -->
       </div>
 
-      <div class="flex w-12 items-center justify-end border border-transparent rounded-full bg-gray-100">
-        <button class="relative flex h-12 w-12 items-center justify-center text-gray-800 dark:text-gray-200">
-          <span class="material-symbols-outlined text-2xl">help</span>
-          <span class="absolute right-2 top-2 h-2 w-2 rounded-full bg-[#FF6B6B]"></span>
-        </button>
+      <!-- Right: action icons (notifications, help, profile) -->
+      <div class="flex items-center gap-3">
+        <div class="flex w-12 items-center justify-center border border-transparent rounded-full bg-gray-100">
+          <button class="relative flex h-12 w-12 items-center justify-center text-gray-800 dark:text-gray-200"
+            aria-label="Notifications">
+            <span class="material-symbols-outlined text-2xl">notifications</span>
+            <span class="absolute right-2 top-2 h-2 w-2 rounded-full bg-[#FF6B6B]"></span>
+          </button>
+        </div>
+
+        <div class="flex w-12 items-center justify-center border border-transparent rounded-full bg-gray-100">
+          <button class="relative flex h-12 w-12 items-center justify-center text-gray-800 dark:text-gray-200"
+            aria-label="Aide">
+            <span class="material-symbols-outlined text-2xl">help</span>
+          </button>
+        </div>
+
+        <!-- Profile icon in header (moved out of bottom navbar) -->
+        <a href="#profile" class="flex items-center justify-center rounded-full bg-gray-100 w-12 h-12"
+          aria-label="Profil">
+          <img src="/public/favicon.png" alt="Profil" class="h-9 w-9 rounded-full object-cover" />
+        </a>
       </div>
     </header>
 
@@ -85,7 +95,6 @@
           placeholder="Rechercher un livre, un cours..." />
       </div>
     </div>
-
     <!-- Quick Access Grid - Design moderne -->
     <div class="grid grid-cols-2 gap-4 px-4 pb-6">
 
@@ -103,7 +112,6 @@
           <h3 class="text-center text-base font-semibold text-gray-800 dark:text-white">Livres<br>numériques</h3>
         </div>
       </a>
-
       <!-- Card 2: Résultats -->
       <a href="#results"
         class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-50 to-slate-100 dark:from-gray-800 dark:to-slate-900 p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 active:scale-[0.98]">
@@ -152,82 +160,87 @@
     </div>
 
   </div>
+  <!-- Bottom Navigation Bar CongoLibs -->
+  <nav id="bottom-nav"
+    class="fixed z-50 w-[95%] h-16 mb-2.5 max-w-lg -translate-x-1/2 bg-white/95 dark:bg-gray-800/95 backdrop-blur-lg border-2 border-gray-200 dark:border-gray-700 rounded-full bottom-4 left-1/2 shadow-xl">
+    <div class="grid h-full max-w-lg grid-cols-5 mx-auto">
 
-  <!-- Bottom Navigation - Style Apple Minimaliste -->
-  <nav class="fixed bottom-0 left-0 right-0 z-50">
-    <div
-      class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-t border-gray-200/50 dark:border-gray-700/50">
-      <div class="max-w-lg mx-auto px-4 pb-safe">
-        <div class="flex items-center justify-around h-16">
+      <!-- Home -->
+      <a href="#home" data-nav-link="home"
+        class="inline-flex flex-col items-center justify-center px-5 rounded-s-full hover:bg-[#26AD39]/10 group transition-colors">
+        <svg
+          class="w-6 h-6 mb-1 text-congo-lime group-hover:text-[#26AD39] dark:text-gray-400 dark:group-hover:text-[#26AD39]"
+          aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+          viewBox="0 0 24 24">
+          <path fill-rule="evenodd"
+            d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z"
+            clip-rule="evenodd" />
+        </svg>
+        <span class="sr-only">Accueil</span>
+      </a>
 
-          <!-- Home -->
-          <a href="/index.html" class="flex flex-col items-center justify-center py-2 px-3 rounded-lg group">
-            <svg
-              class="w-6 h-6 mb-1 text-gray-500 group-hover:text-[#26AD39] dark:text-gray-400 dark:group-hover:text-[#26AD39] transition-colors"
-              aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-              viewBox="0 0 24 24">
-              <path fill-rule="evenodd"
-                d="M11.293 3.293a1 1 0 0 1 1.414 0l6 6 2 2a1 1 0 0 1-1.414 1.414L19 12.414V19a2 2 0 0 1-2 2h-3a1 1 0 0 1-1-1v-3h-2v3a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2v-6.586l-.293.293a1 1 0 0 1-1.414-1.414l2-2 6-6Z"
-                clip-rule="evenodd" />
-            </svg>
-            <span class="sr-only">Accueil</span>
-          </a>
+      <!-- Bibliothèque -->
+      <a href="#books" data-nav-link="books"
+        class="inline-flex flex-col items-center justify-center px-5 hover:bg-[#26AD39]/10 group transition-colors">
+        <svg
+          class="w-6 h-6 mb-1 text-gray group-hover:text-[#26AD39] dark:text-gray-400 dark:group-hover:text-[#26AD39]"
+          aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 6.03v13m0-13c-2.819-.831-4.715-1.076-8.029-1.023A.99.99 0 0 0 3 6v11c0 .563.466 1.014 1.03 1.007 3.122-.043 5.018.212 7.97 1.023m0-13c2.819-.831 4.715-1.076 8.029-1.023A.99.99 0 0 1 21 6v11c0 .563-.466 1.014-1.03 1.007-3.122-.043-5.018.212-7.97 1.023" />
+        </svg>
+        <span class="sr-only">Bibliothèque</span>
+      </a>
 
-          <!-- Bibliothèque -->
-          <a href="#books" class="flex flex-col items-center justify-center py-2 px-3 rounded-lg group">
-            <svg
-              class="w-6 h-6 mb-1 text-gray-500 group-hover:text-[#26AD39] dark:text-gray-400 dark:group-hover:text-[#26AD39] transition-colors"
-              aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-              viewBox="0 0 24 24">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 6.03v13m0-13c-2.819-.831-4.715-1.076-8.029-1.023A.99.99 0 0 0 3 6v11c0 .563.466 1.014 1.03 1.007 3.122-.043 5.018.212 7.97 1.023m0-13c2.819-.831 4.715-1.076 8.029-1.023A.99.99 0 0 1 21 6v11c0 .563-.466 1.014-1.03 1.007-3.122-.043-5.018.212-7.97 1.023" />
-            </svg>
-            <span class="sr-only">Bibliothèque</span>
-          </a>
-
-          <!-- Bouton Central + -->
-          <button type="button"
-            class="flex items-center justify-center w-12 h-12 -mt-6 rounded-full bg-gradient-to-r from-congo-medium to-congo-lime shadow-md hover:shadow-lg transition-all active:scale-95">
-            <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-              fill="none" viewBox="0 0 24 24">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M5 12h14m-7 7V5" />
-            </svg>
-            <span class="sr-only">Ajouter</span>
-          </button>
-
-          <!-- Téléchargements -->
-          <a href="#gallery"
-            class="flex flex-col items-center justify-center py-2 px-3 rounded-lg group">
-            <svg
-              class="w-6 h-6 mb-1 text-gray-500 group-hover:text-[#26AD39] dark:text-gray-400 dark:group-hover:text-[#26AD39] transition-colors"
-              aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-              viewBox="0 0 24 24">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 13V4M7 14H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2m-1-5-4 5-4-5m9 8h.01" />
-            </svg>
-            <span class="sr-only">Téléchargements</span>
-          </a>
-
-          <!-- Profil -->
-          <a href="#profile"
-            class="flex flex-col items-center justify-center py-2 px-3 rounded-lg group">
-            <svg
-              class="w-6 h-6 mb-1 text-gray-500 group-hover:text-[#26AD39] dark:text-gray-400 dark:group-hover:text-[#26AD39] transition-colors"
-              aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-              viewBox="0 0 24 24">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0a8.949 8.949 0 0 0 4.951-1.488A3.987 3.987 0 0 0 13 16h-2a3.987 3.987 0 0 0-3.951 3.512A8.948 8.948 0 0 0 12 21Zm3-11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-            </svg>
-            <span class="sr-only">Profil</span>
-          </a>
-
-        </div>
+      <!-- Bouton Central + -->
+      <div class="flex items-center justify-center">
+        <button type="button" id="addBtn"
+          class="inline-flex items-center justify-center text-white bg-gradient-to-r from-[#1DDA59] to-[#26AD39] hover:from-[#26AD39] hover:to-[#1DDA59] focus:ring-4 focus:ring-[#26AD39]/20 shadow-lg rounded-full w-12 h-12 focus:outline-none transition-all active:scale-95">
+          <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+            viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M5 12h14m-7 7V5" />
+          </svg>
+          <span class="sr-only">Ajouter</span>
+        </button>
       </div>
+
+      <!-- Téléchargements / Galerie -->
+      <a href="#gallery" data-nav-link="gallery"
+        class="inline-flex flex-col items-center justify-center px-5 hover:bg-[#26AD39]/10 group transition-colors">
+        <svg
+          class="w-6 h-6 mb-1 text-gray-500 group-hover:text-[#26AD39] dark:text-gray-400 dark:group-hover:text-[#26AD39]"
+          aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 13V4M7 14H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2m-1-5-4 5-4-5m9 8h.01" />
+        </svg>
+        <span class="sr-only">Téléchargements</span>
+      </a>
+
+      <!-- Résultats (examens) - remplace Profil dans la navbar -->
+      <a href="#results" data-nav-link="results"
+        class="inline-flex flex-col items-center justify-center px-5 rounded-e-full hover:bg-[#26AD39]/10 group transition-colors">
+        <svg
+          class="w-6 h-6 mb-1 text-gray-500 group-hover:text-[#26AD39] dark:text-gray-400 dark:group-hover:text-[#26AD39]"
+          aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+          viewBox="0 0 24 24">
+          <path d="M3 21h3V10H3v11zm6 0h3V4h-3v17zm6 0h3V14h-3v7z"></path>
+        </svg>
+        <span class="sr-only">Résultats</span>
+      </a>
+
     </div>
   </nav>
+  </div>
+
+
 
   <script>
+    const btn = document.getElementById('addBtn');
+    alert(btn);
+    btn.addEventListener('click', () => {
+      alert("Aucune action n'est encore définie");
+    })
+
     function initTheme() {
       const isDark = localStorage.getItem('theme') === 'dark' ||
         (!localStorage.getItem('theme') &&
@@ -241,6 +254,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', initTheme);
+
   </script>
 
 </body>

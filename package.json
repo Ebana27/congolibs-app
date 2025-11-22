@@ -11,7 +11,11 @@
 
     "cap:add": "npx cap add android",
     "cap:sync": "npx cap sync android",
-    "cap:open": "npx cap open android"
+    "cap:open": "npx cap open android",
+    "netlify:login": "netlify login",
+    "netlify:deploy": "netlify deploy --dir=dist",
+    "netlify:deploy:prod": "netlify deploy --dir=dist --prod",
+    "netlify:build-and-deploy": "npm run build && npm run netlify:deploy:prod"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.17",
@@ -20,6 +24,8 @@
     "tailwindcss": "^4.1.17",
     "sharp": "^0.32.4",
     "vite": "^7.2.2"
+    ,
+    "netlify-cli": "^11.0.0"
   },
   "dependencies": {
     "@capacitor/android": "^7.4.4",
